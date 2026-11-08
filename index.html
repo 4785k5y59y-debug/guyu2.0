@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b5c45">
+  <meta name="description" content="肤知AI：基于个人肤况、过敏史与可追溯证据的护肤决策助手公开体验版。">
+  <title>谷雨 · 肤知AI｜知肤，知时，知所宜</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="page-glow page-glow-a"></div>
+  <div class="page-glow page-glow-b"></div>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="肤知AI首页">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><path d="M24 5c8 7 15 15 15 24a15 15 0 0 1-30 0C9 20 16 12 24 5Z"/><path class="brand-cut" d="M17 30c4-7 9-10 17-13-2 8-7 14-17 17"/></svg>
+      </span>
+      <span><strong>谷雨 <span class="brand-divider">/</span> 肤知AI</strong><small>GUYU · SKIN INTELLIGENCE</small></span>
+    </a>
+    <div class="top-actions">
+      <span class="privacy-pill"><i></i> 数据仅存当前浏览器</span>
+      <button class="ghost-button compact" id="resetAll" type="button">重置体验</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span>谷雨 · 肤知</span> 知肤 · 知时 · 知所宜</div>
+        <h1>守护健康，<br><em>从此开始。</em></h1>
+        <p>听见肌肤的细微变化，让每一次护肤选择都有据可循。<br>从了解自己开始，找到此刻适合你的护肤节奏。</p>
+        <div class="hero-actions">
+          <button class="primary-button" type="button" data-go="profile">建立我的档案 <span>→</span></button>
+          <button class="text-button" type="button" data-go="review">查询我的产品 <span>↗</span></button>
+        </div>
+        <div class="trust-row" aria-label="体验版能力">
+          <div><strong>33</strong><span>种成分资料</span></div>
+          <div><strong>9</strong><span>组搭配提示</span></div>
+          <div><strong>隐私</strong><span>本地处理输入</span></div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="雨生百谷，草木知时的植萃插画">
+        <div class="season-seal">雨<br>生<br>百<br>谷</div>
+        <svg class="botanical-art" viewBox="0 0 500 540" role="img" aria-label="玉盘上的甘草枝叶与雨滴">
+          <defs><radialGradient id="jade"><stop stop-color="#f9faf0"/><stop offset=".72" stop-color="#dfe8d4"/><stop offset="1" stop-color="#b8cbb0"/></radialGradient><linearGradient id="leaf" x2="1" y2="1"><stop stop-color="#8da77b"/><stop offset="1" stop-color="#345b40"/></linearGradient><filter id="soft"><feGaussianBlur stdDeviation="12"/></filter></defs>
+          <ellipse cx="260" cy="450" rx="150" ry="26" fill="#35553b" opacity=".12" filter="url(#soft)"/>
+          <circle cx="263" cy="277" r="194" fill="url(#jade)"/><circle cx="263" cy="277" r="178" fill="none" stroke="#f6f8ee"/><circle cx="263" cy="277" r="207" fill="none" stroke="#a4b394" opacity=".55"/>
+          <g fill="none" stroke="#61764d" stroke-width="2"><path d="M190 474 Q255 340 274 107 M247 365 Q166 302 135 220 M259 300 Q340 242 367 172 M270 229 Q213 191 198 142"/></g>
+          <g fill="url(#leaf)"><path d="M247 376 Q158 396 153 317 Q222 316 247 376"/><path d="M254 336 Q319 357 342 285 Q282 280 254 336"/><path d="M262 285 Q199 293 185 225 Q241 230 262 285"/><path d="M269 243 Q328 248 343 190 Q287 187 269 243"/><path d="M275 191 Q229 183 235 128 Q276 139 275 191"/><path d="M278 151 Q318 121 290 77 Q266 112 278 151"/><path d="M184 282 Q115 282 108 225 Q167 229 184 282"/><path d="M329 227 Q382 229 393 178 Q350 179 329 227"/><path d="M216 176 Q166 175 170 126 Q207 136 216 176"/></g>
+          <g stroke="#e7eddc" fill="none" opacity=".55"><path d="M155 319L243 373 M339 287L257 333 M187 228L259 282 M341 192L272 240 M235 130L274 188"/></g>
+          <g fill="#71866a" opacity=".45"><path d="M132 124q-14 20 0 20q14 0 0-20"/><path d="M366 330q-11 16 0 16q11 0 0-16"/><path d="M222 65q-8 12 0 12q8 0 0-12"/></g>
+        </svg>
+        <div class="botanical-caption"><span>BOTANICAL WISDOM · SKIN SCIENCE</span><strong>草木有时，护肤有方。</strong></div>
+        <div class="visual-note"><span class="note-dot"></span> 植萃的温柔，科学的分寸。</div>
+      </div>
+    </section>
+
+    <section class="workspace" id="experience">
+      <div class="section-heading">
+        <div><span class="section-kicker">YOUR SKIN RITUAL</span><h2>先懂肌肤，再选护肤</h2></div>
+        <p>01 建立我的档案 → 02 查询产品成分，找到适合此刻的下一步。</p>
+      </div>
+
+      <div class="tablist" role="tablist" aria-label="护肤体验步骤">
+        <button class="tab active" id="tab-profile" role="tab" aria-selected="true" aria-controls="panel-profile" data-tab="profile"><span>01</span> 建立我的档案</button>
+        <button class="tab" id="tab-review" role="tab" aria-selected="false" aria-controls="panel-review" data-tab="review"><span>02</span> 查询产品成分</button>
+      </div>
+
+      <section class="tab-panel" id="panel-review" role="tabpanel" aria-labelledby="tab-review" hidden>
+        <div class="app-grid">
+<aside class="review-context card"><div class="card-label">本次查询依据</div><h3 id="reviewProfileName">我的档案</h3><p>结合你保存的肤质、当前阶段和已知过敏成分，逐项核对。</p><button class="text-button" type="button" data-go="profile">修改我的档案 ↗</button><div class="ritual-note">一人一肤况<br>一时一所宜</div></aside>
+
+          <div class="review-panel card">
+            <div class="review-title-row"><div><div class="card-label">粘贴产品成分表</div><h3>今天想用这款产品，可以吗？</h3></div><button class="mini-button" id="loadDemo" type="button">输入我的产品</button></div>
+            <label class="sr-only" for="ingredients">产品成分表</label>
+            <textarea id="ingredients" spellcheck="false" placeholder="粘贴包装上的完整成分表，例如：水、甘油、烟酰胺…"></textarea>
+            <div class="input-meta"><span id="inputCount">已识别 0 项</span><span>可填中文或英文成分名，用逗号或换行分开</span></div>
+            <button class="primary-button full" id="reviewButton" type="button"><span class="scan-icon" aria-hidden="true">→</span> 生成我的个性化建议</button>
+            <p class="input-note">体验版使用本地规则与证据库，不会上传你的输入。</p>
+          </div>
+        </div>
+
+        <div class="result-wrap" id="resultWrap" aria-live="polite">
+          <div class="empty-result"><div class="empty-orb">AI</div><h3>你的专属结论会显示在这里</h3><p>系统会依次核对已知过敏成分、当前肤况、成分资料与搭配提示。</p></div>
+        </div>
+      </section>
+
+      <section class="tab-panel active" id="panel-profile" role="tabpanel" aria-labelledby="tab-profile">          <aside class="profile-panel card">
+            <div class="card-label">我的档案</div><p class="sample-note">以下为示例档案；填写下方表单即可建立自己的档案。</p>
+            <div class="profile-switch" role="group" aria-label="选择演示档案">
+              <button class="active" type="button" data-profile="sensitive"><span class="avatar warm">敏</span><span><strong>敏感肌 · 术后</strong><small>含已知过敏成分</small></span><i>✓</i></button>
+              <button type="button" data-profile="oily"><span class="avatar cool">油</span><span><strong>健康油皮</strong><small>无已知过敏成分</small></span><i>✓</i></button>
+            </div>
+            <button class="text-button" id="usePersonal" type="button" data-profile="personal" hidden>使用我的档案 ↗</button><div class="profile-facts" id="profileFacts"></div>
+            <div class="insight-box"><span>肌肤有自己的节奏</span><p>同一款产品，在不同肤况、不同阶段，适用建议也会改变。</p></div><form id="personalForm" class="personal-form">
+  <div class="profile-form-heading"><div><span class="card-label">PERSONAL PROFILE</span><h3>把了解，留给每一次选择</h3></div><span class="subtle-tag">仅保存在本机浏览器</span></div>
+  <div class="form-grid"><label>我的肤质<select id="personalSkin"><option>中性皮肤</option><option>干性皮肤</option><option>油性皮肤</option><option>混合性皮肤</option><option>敏感性皮肤</option></select></label>
+  <label>当前阶段<select id="personalStage"><option>日常稳定期</option><option>医美术后恢复期</option></select></label>
+  <label class="wide">已知过敏成分（选填）<input id="personalAllergy" maxlength="300" placeholder="填写已确认过敏的成分，多个成分用逗号分开"><small>仅用于匹配你提供的过敏史，不用于判断是否过敏。</small></label></div>
+  <button class="primary-button" type="submit">保存档案，查询产品 <span>→</span></button><p class="profile-save-state" id="profileSaveState" role="status">也可以先选择上方示例档案，了解使用方式。</p>
+</form>
+          </aside>
+        <div class="journal-heading"><span class="section-kicker">DAILY OBSERVATION</span><h3>日日有记录，变化看得见。</h3><p>下方趋势含示例数据；个人档案仅展示你实际保存的记录。</p></div><div class="profile-dashboard">
+          <div class="baseline-card card">
+            <div class="dashboard-head"><div><div class="card-label">SKIN JOURNAL · 肤况手记</div><h3>你的皮肤不是一个固定标签</h3></div><span class="status-chip stable" id="baselineStatus">状态平稳</span></div>
+            <p class="sample-note" id="chartDataSource">示例档案 · 演示记录</p><div class="baseline-metrics">
+              <div><span>当前肤质</span><strong id="skinTypeMetric">敏感性皮肤</strong></div>
+              <div><span>最近舒适度</span><strong><b id="latestScoreMetric">4</b><small> / 5</small></strong></div>
+              <div><span>主要关注</span><strong id="concernMetric">泛红</strong></div>
+              <div><span>已记录</span><strong><b id="recordCountMetric">14</b><small> 次</small></strong></div>
+            </div>
+            <div class="chart-wrap">
+              <div class="chart-title"><span>肤况记录趋势</span><small id="chartSummary">整体平稳，偶有波动</small></div>
+              <div id="skinChart" class="skin-chart" role="img" aria-label="肤况评分记录折线图"></div>
+            </div>
+            <div class="baseline-note" id="baselineNote"></div>
+          </div>
+
+          <form class="checkin-card card" id="checkinForm">
+            <div class="card-label">今日肤况手记</div>
+            <h3>今天，肌肤感觉如何？</h3>
+            <label>今日舒适度 <output id="scoreOutput">2 / 5</output></label>
+            <input type="range" id="skinScore" min="1" max="5" value="2"><p class="sample-note">1 分：很不舒适 · 5 分：状态舒适</p>
+            <fieldset><legend>今天出现了什么？</legend><div class="issue-grid">
+              <label><input type="checkbox" name="issue" value="泛红" checked><span>泛红</span></label>
+              <label><input type="checkbox" name="issue" value="刺痛" checked><span>刺痛</span></label>
+              <label><input type="checkbox" name="issue" value="干燥紧绷"><span>干燥紧绷</span></label>
+              <label><input type="checkbox" name="issue" value="出油"><span>出油</span></label>
+            </div></fieldset>
+            <label for="snapshotNote">备注（可选）</label>
+            <input id="snapshotNote" type="text" maxlength="60" placeholder="例：昨晚第一次使用含酸精华">
+            <button class="primary-button full" type="submit">记录今日肤况</button>
+            <button class="text-button center" id="resetSnapshots" type="button">恢复演示初始状态</button>
+          </form>
+        </div>
+      </section>
+    </section>
+
+    <section class="how-section">
+      <div class="section-heading light"><div><span class="section-kicker">SCIENCE WITH CARE</span><h2>草木之智，有据可依</h2></div></div>
+      <div class="how-grid">
+        <article><span>01</span><div class="how-icon" aria-hidden="true">01 / 了解</div><h3>读懂你</h3><p>肤质、过敏史、特殊阶段与连续肤况，组成会变化的个人边界。</p></article>
+        <article><span>02</span><div class="how-icon" aria-hidden="true">02 / 核对</div><h3>核对证据</h3><p>先做确定性规则匹配，再给出分级结论；让每条提示都能追溯到资料出处。</p></article>
+        <article><span>03</span><div class="how-icon" aria-hidden="true">03 / 行动</div><h3>给出下一步</h3><p>不只说风险，还会告诉你暂停、错开、减频或咨询专业人士。</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand"><strong>谷雨 <span class="brand-divider">/</span> 肤知AI</strong><span>让每一次护肤选择，都更了解自己。</span></div>
+    <div class="footer-note"><strong>概念体验 · 非谷雨官方产品</strong><p>本页面为谷雨品牌主题的参赛概念体验，非品牌官方服务，提供的是基于已录入资料的护肤信息提示，不构成医学诊断、处方或完整法规合规审查。出现持续不适、皮损或严重反应时，请停止使用并及时就医。</p></div>
+    <span class="version">GUYU CONCEPT · 2026</span>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
